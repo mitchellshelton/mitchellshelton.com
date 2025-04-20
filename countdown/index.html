@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            background: linear-gradient(135deg, crimson, #6a11cb, #2575fc);
+            background-size: 200% 200%;
+            animation: gradientMove 20s infinite alternate linear;
+            will-change: background-position;
+            color: white;
+            text-align: center;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 50% 50%; }
+            100% { background-position: 100% 100%; }
+        }
+        
+        .countdown-container {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .countdown-title {
+            margin: 0;
+        }
+        
+        .countdown {
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                animation: none;
+                background: #6a11cb;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown-container">
+        <h1 class="countdown-title">Countdown</h1>
+        <div class="countdown" id="countdown"></div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date('2049-01-01'); // Set your static date here
+            const today = new Date();
+            
+            // Reset time to midnight for an accurate day count
+            targetDate.setHours(0, 0, 0, 0);
+            today.setHours(0, 0, 0, 0);
+            
+            const timeDifference = targetDate - today;
+            const daysRemaining = Math.max(Math.floor(timeDifference / (1000 * 60 * 60 * 24)), 0);
+            
+            document.getElementById('countdown').innerText = `${daysRemaining} Days Remaining`;
+        }
+        
+        updateCountdown(); // Initial call
+        setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mitchellshelton.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <h1 class="sitetitle">mitchellshelton.com</h1>
+    <ul class="linklist">
+      <li class="listitem"><a class="listlink" href="https://www.instagram.com/mitchellshelton">Instagram</a></li>
+      <li class="listitem"><a class="listlink" href="https://github.com/mitchellshelton">GitHub</a></li>
+      <li class="listitem"><a class="listlink" href="https://www.linkedin.com/in/mitchellshelton">LinkedIn</a></li>
+      <li class="listitem"><a class="listlink" href="https://www.juncmodule.com">juncmodule</a></li>
+    </ul>
+    <br>
+    <p class="copyright">&copy; Mitchell Shelton <span id="copyright-date">{{ current_year }}</span></p>
+	<script src="{{ url_for('static', filename='js/javascript.js') }}"></script>
+  </body>
+</html>
