@@ -1,3 +1,8 @@
 tx81zpatchreader
+tx81zpatchreader/*
+share
+share/*
+namegen
+namegen/*
 .venv
 .venv/*
