@@ -6,3 +6,4 @@ namegen
 namegen/*
 .venv
 .venv/*
+.DS_Store
